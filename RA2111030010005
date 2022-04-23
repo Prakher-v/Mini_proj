@@ -1,0 +1,76 @@
+#include <stdio.h>
+int age;
+int Math,PPS,Chem;
+int year;
+float a,b,c;
+int f=1,num;
+int main() {
+    int no;
+    printf("1. Check Whether You are Eligible for Voting or Not\n");
+    printf("2. Check Whether You are Pass or Not\n");
+    printf("3. Check Whether Given Year is a leap year or Not\n");
+    printf("4. Find the Greatest Number Among 3\n");
+    printf("5. Check The Factorial of the Given Number\n");
+    printf("Choose any One::\n");
+    scanf("%d",&no);
+    printf("The Option you Choose is:%d\n",no);
+    switch(no){
+        case 1:
+        printf("Enter your age:\n");
+        scanf("%d",&age);
+        printf("Your Age is:%d\n",age);
+        if(age>=18){
+            printf("You are Eligible for Voting");
+        }else{
+            printf("You are Not Eligible");
+        }break;
+        case 2:
+        printf("Enter the Marks of Maths,PPS,Chem out of 100:\n");
+        scanf("%d %d %d",&Math,&PPS,&Chem);
+        int total = Math+PPS+Chem;
+        int mrk  = total/3;
+        printf("The totall is::%d\n",mrk);
+        if(mrk>=90){
+            printf("Excellent");
+        }
+        else if(mrk>=70&&mrk<90){
+            printf("Very Good");
+        }
+        else{
+            printf("You Need to Work Hard");
+        }break;
+        case 3:
+        printf("The Year:\n");
+        scanf("%d",&year);
+        if(year%4==0 && year%400==0 || year%100!=0){
+            printf("%d Is a Leap Year",year);
+        }
+        else{
+            printf("%d Is not a Leap Year",year);
+        }break;
+        case 4:
+        printf("Enter the values of A,B,C:\n");
+        scanf("%f %f %f",&a,&b,&c);
+        printf("A=%0.1f\nB=%0.1f\nC=%0.1f\n",a,b,c);
+        if(a>b && a>c){
+            printf("A is Greater:%0.1f",a);
+        }
+        else if(b>a&&b>c){
+            printf("B is Greater:%0.1f",b);
+        }
+        else{
+            printf("C is Greater:%0.1f",c);
+        }break;
+        case 5:
+        printf("Enter Number:\n");
+        scanf("%d",&num);
+        for(int n = 1;n<=num;n++){
+            f = f*n;
+        }printf("The Factorial of %d is %d",num,f);
+        break;
+        default:
+            printf("You Enter Wrong Choice::\n Thanks you");
+            break;
+    }
+    return 0;
+}
